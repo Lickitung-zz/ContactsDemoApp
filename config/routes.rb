@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get '/contacts/:id' => 'contacts#show'
     post '/contacts' => 'contacts#create'
     delete '/contacts/:id' => 'contacts#delete'
+    put '/contacts/:id' => 'contacts#update'
 
     get '/posts' => 'posts#index'
   end
