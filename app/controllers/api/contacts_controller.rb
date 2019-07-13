@@ -5,22 +5,25 @@ class Api::ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(
+    @contact = Contact.create(
       first_name: params[:first_name],
       last_name: params[:last_name],
       phone_number: params[:phone_number],
       email: params[:email]
     )
-    @contact.save
     render "show.json.jbuilder"
   end
+
+  
 
   def update
     @contact
   end
 
   def delete
-    @contact
+    @contact = Contact.find_by(id: params[:id])
+    @contact.destroy
+    render json: {message: "Contact deleted."}
   end
 
   def show
