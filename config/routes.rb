@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     put '/contacts/:id' => 'contacts#update'
 
     get '/posts' => 'posts#index'
+
+    post '/users' => "users#create"
+
+    post '/sessions' => 'sessions#create'
   end
 end

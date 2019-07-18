@@ -14,8 +14,6 @@ class Api::ContactsController < ApplicationController
     render "show.json.jbuilder"
   end
 
-  
-
   def update
     @contact = Contact.find_by(id: params[:id])
     @contact.first_name = params[:first_name] || @contact.first_name
